@@ -7,15 +7,15 @@ class Advinador():
     def __init__(self):
         st.set_page_config(
             page_title="Adivinador",
-            page_icon="🧊",
-            layout="wide",
+            page_icon="🤔",
+            layout='centered',
             initial_sidebar_state="expanded",
             menu_items={
                 'Get Help': 'https://www.extremelycoolapp.com/help',
                 'Report a bug': "https://www.extremelycoolapp.com/bug",
                 'About': "# This is a header. This is an *extremely* cool app!"
             })
-        st.title("Org. Y Arquitectura Del Computador - Adivinador")
+        st.title("Org. Y Arquitectura Del Computador - Adivinador 🤔")
 
     def generar_tablas(self, rango_inferior=1, rango_superior=100):
         df = pd.DataFrame()
@@ -24,7 +24,7 @@ class Advinador():
 
         tablas = {f'Tabla {i + 1} (2^{i})': [] for i in range(num_tablas)}
 
-        for num in range(rango_inferior, rango_superior + 1):
+        for num in range(rango_inferior, rango_superior - 1):
             for j in range(num_tablas):
                 if (num & (1 << j)) != 0:
                     tablas[f'Tabla {j + 1} (2^{j})'].append(num)
@@ -34,7 +34,7 @@ class Advinador():
         for i in range(len(df_tablas.columns)):
             df["Columna1" + str(i)] = df_tablas[df_tablas.columns[i]].sample(frac=1).reset_index(drop=True)
 
-        return df
+        return df_tablas
 
     def adivinar_numero(self, df=pd.DataFrame):
         numero_adivinado = 0
