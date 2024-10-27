@@ -18,6 +18,9 @@ class Advinador():
         st.title("Org. Y Arquitectura Del Computador - Adivinador 🤔")
 
     def generar_tablas(self, rango_inferior=1, rango_superior=100):
+        if rango_superior < 100:
+            rango_superior = 100
+            
         df = pd.DataFrame()
         max_num = rango_superior
         num_tablas = max_num.bit_length()
