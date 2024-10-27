@@ -34,7 +34,7 @@ class Advinador():
         for i in range(len(df_tablas.columns)):
             df["Columna1" + str(i)] = df_tablas[df_tablas.columns[i]].sample(frac=1).reset_index(drop=True)
 
-        return df_tablas
+        return df
 
     def adivinar_numero(self, df=pd.DataFrame):
         numero_adivinado = 0
