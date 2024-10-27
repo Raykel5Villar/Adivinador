@@ -24,7 +24,7 @@ class Advinador():
 
         tablas = {f'Tabla {i + 1} (2^{i})': [] for i in range(num_tablas)}
 
-        for num in range(rango_inferior, rango_superior + 2):
+        for num in range(rango_inferior, rango_superior + 1):
             for j in range(num_tablas):
                 if (num & (1 << j)) != 0:
                     tablas[f'Tabla {j + 1} (2^{j})'].append(num)
