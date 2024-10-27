@@ -31,10 +31,10 @@ class Advinador():
 
         df_tablas = pd.DataFrame(dict([(k, pd.Series(v)) for k, v in tablas.items()]))
 
-        for i in range(len(df_tablas.columns)):
-            df["Columna1" + str(i)] = df_tablas[df_tablas.columns[i]].sample(frac=1).reset_index(drop=True)
+        #for i in range(len(df_tablas.columns)):
+        #   df["Columna1" + str(i)] = df_tablas[df_tablas.columns[i]].sample(frac=1).reset_index(drop=True)
 
-        return df
+        return df_tablas
 
     def adivinar_numero(self, df=pd.DataFrame):
         numero_adivinado = 0
